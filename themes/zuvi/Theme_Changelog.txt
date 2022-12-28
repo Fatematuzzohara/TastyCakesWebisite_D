@@ -34,3 +34,14 @@ Version 8.1.5
 +===============================+
 # Zuvi theme is now compatible on Drupal 8.x.x and Drupal 9.x.x
 # Added option to set header animated circle as border type or solid type.
+
+
++===============================+
+Version 8.1.6
+01 March, 2021
++===============================+
+# Added required css for field label.
+# Added sass files.
+# New grid and flex based layouts.
+# Added ption to sidebar on frontpage.
+# Moved "Custom CSS Codes" section under "Insert Codes" in theme settings.

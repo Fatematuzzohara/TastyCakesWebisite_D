@@ -1,12 +1,13 @@
 <!-- Start: Header -->
-<header class="header clear">
+<header class="header">
   <div class="header-circle header-circle1"></div>
   <div class="header-circle header-circle2"></div>
   <div class="header-circle header-circle3"></div>
   <div class="header-circle header-circle4"></div>
   <div class="header-circle header-circle5"></div>
   <div class="header-circle header-circle6"></div>
-  <div class="container header-main">
+  <div class="container">
+    <div class="header-main">
     {% if page.site_branding %}
       <div class="site-brand">
         {{ page.site_branding }}
@@ -28,6 +29,7 @@
         {% endif %}
       </div> <!-- /.header-right -->
     {% endif %}
+    </div> <!-- /.header-main -->
   </div> <!-- /.container -->
   {% if is_front and slider_show %}
     {% include '@zuvi/template-parts/slider.html.twig' %}

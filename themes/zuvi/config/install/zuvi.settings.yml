@@ -20,6 +20,9 @@ slider_code: ''
 slider_image: ''
 slider_image_path: ''
 
+# sidebar
+front_sidebar: 0
+
 # Content
 comment_user_pic: 1
 node_author_pic: 0

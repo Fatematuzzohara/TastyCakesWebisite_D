@@ -52,15 +52,17 @@
 {% include '@zuvi/template-parts/header.html.twig' %}
 {% include '@zuvi/template-parts/highlighted.html.twig' %}
 <div id="main-wrapper" class="main-wrapper">
-  <div class="container main-container clear">
-    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+  <div class="container">
+  <div class="main-container">
     <main id="main" class="page-content">
+      <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
       {% include '@zuvi/template-parts/content_top.html.twig' %}
       {{ page.content }}
       {% include '@zuvi/template-parts/content_bottom.html.twig' %}
     </main>
     {% include '@zuvi/template-parts/sidebar_left.html.twig' %}
     {% include '@zuvi/template-parts/sidebar_right.html.twig' %}
+  </div> {# /.main-container #}
   </div> {# /.container #}
 </div>{# /main-wrapper #}
 {% include '@zuvi/template-parts/footer.html.twig' %}

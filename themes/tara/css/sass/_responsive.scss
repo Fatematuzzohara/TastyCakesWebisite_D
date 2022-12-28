@@ -224,6 +224,10 @@
   .active-menu ul.menu li a {
     border-bottom: 1px solid #434343;
   }
+  ul.main-menu > li > span,
+  .region-primary-menu .menu > li > span {
+    color: #ffffff;
+  }
   .active-menu .close-mobile-menu {
     position: absolute;
     display: flex;

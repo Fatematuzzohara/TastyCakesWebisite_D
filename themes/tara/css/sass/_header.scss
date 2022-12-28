@@ -174,15 +174,21 @@ ul.social-icons li a:hover {
 ul.main-menu,
 .region-primary-menu .menu {
   position: relative;
+  font-family: "Roboto", sans-serif;
+  color: var(--bold-color);
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   z-index: 10;
   list-style: none;
   list-style-type: none;
   text-transform: none;
+}
+ul.main-menu > li > span,
+.region-primary-menu .menu > li > span {
+  display: block;
+  padding: 16px 14px;
 }
 ul.main-menu > li a,
 .region-primary-menu .menu > li a {
@@ -225,7 +231,6 @@ ul.main-menu ul.submenu li,
 .region-primary-menu .menu .submenu li {
   display: block;
   width: 160px;
-  padding: 12px 10px;
   font-size: 0.9rem;
   background: var(--bold-color);
   border-top: 1px solid #494949;
@@ -233,7 +238,8 @@ ul.main-menu ul.submenu li,
 }
 ul.main-menu ul.submenu li a,
 .region-primary-menu .menu .submenu li a {
-  padding: 10px 10px;
+  display: block;
+  padding: 12px 4px 12px 14px;
   color: #ffffff;
 }
 li.expanded:hover ul.submenu,

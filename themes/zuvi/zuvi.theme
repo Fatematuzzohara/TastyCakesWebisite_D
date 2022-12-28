@@ -47,6 +47,7 @@ function zuvi_preprocess_page(array &$variables) {
   $variables['whatsapp_url'] = santise_val_url(theme_get_setting('whatsapp_url', 'zuvi'));
   $variables['github_url'] = santise_val_url(theme_get_setting('github_url', 'zuvi'));
 	$variables['vk_url'] = santise_val_url(theme_get_setting('vk_url', 'zuvi'));
+	$variables['front_sidebar'] = theme_get_setting('front_sidebar', 'zuvi');
 	$variables['scrolltotop_on'] = theme_get_setting('scrolltotop_on', 'zuvi');
 	$variables['copyright_text'] = theme_get_setting('copyright_text', 'zuvi');
 	$variables['font_icon_fontawesome'] = theme_get_setting('font_icon_fontawesome', 'zuvi');

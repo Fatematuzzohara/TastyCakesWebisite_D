@@ -31,63 +31,34 @@
     margin: 0 auto;
   }
   /* Layout */
-  .main-container {
-    display: block;
+  .no-sidebar .main-container {
+    grid-template-columns: 1fr;
+  }
+  .sidebar-left .main-container {
+    grid-template-columns: 30% 70%;
+  }
+  .sidebar-right .main-container {
+    grid-template-columns: 70% 30%;
+  }
+  .two-sidebar .main-container {
+    grid-template-columns: 30% 40% 30%;
   }
   #main {
-    margin: 0;
-  }
-  /* Three column */
-  .two-sidebar #main {
-    float: left;
-    width: 40%;
-    margin: 0 0 0 30%;
-  }
-  /* Two column with left sidebar */
-  .sidebar-left #main {
-    float: right;
-    width: 70%;
-    margin: 0;
-  }
-
-  /* Two column with right sidebar */
-  .sidebar-right #main {
-    float: left;
-    width: 70%;
-    margin: 0;
+    order: 2;
   }
   .sidebar {
     position: relative;
-    width: 30%;
-    min-height: 100%;
+    width: 100%;
     margin: 0;
-    padding: 0;
   }
-
-  /* Sidebar -> Sidebar left */
+  /* Sidebar */
   #sidebar-left {
-    float: left;
-    padding: 0 2% 0 0;
+    ordeR: 1;
+    padding: 0 20px 0 0;
   }
-
-  /* Sidebar -> Sidebar right */
   #sidebar-right {
-    float: right;
-    padding: 0 0 0 2%;
-  }
-
-  /* Sidebar -> Sidebar left in three column */
-  .two-sidebar #sidebar-left {
-    float: left;
-    clear: none;
-    margin: 0 0 0 -70%;
-  }
-
-  /* Sidebar -> Sidebar right in three column */
-  .two-sidebar #sidebar-right {
-    float: right;
-    clear: none;
-    margin: 0;
+    order: 3;
+    padding: 0 0 0 20px;
   }
   .services,
   .full,
@@ -128,9 +99,6 @@
     padding: 0 10px;
   }
   /* Footer */
-  .footer .block {
-    padding-bottom: 2em;
-  }
   .footer-bottom-last > * {
     margin-bottom: 0;
   }

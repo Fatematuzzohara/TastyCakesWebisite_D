@@ -640,6 +640,7 @@ $settings['update_free_access'] = FALSE;
  */
 # $config['system.site']['name'] = 'My Drupal site';
 # $config['user.settings']['anonymous'] = 'Visitor';
+$config['system.logging']['error_level']='verbose';
 
 /**
  * Fast 404 pages:
@@ -794,6 +795,7 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 # if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
+$settings['rebuild_access'] = TRUE;
 $databases['default']['default'] = array (
   'database' => 'drupalsite3',
   'username' => 'root',

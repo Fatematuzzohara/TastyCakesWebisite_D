@@ -14,11 +14,12 @@
 
 /* Admin Tabs */
 ul.page-tabs {
+  list-style: none;
   display: flex;
+  flex-wrap: wrap;
   margin: 0 0 10px 0;
   padding: 0;
-  border-bottom: 1px solid var(--border);
-  list-style: none;
+  border-bottom: 2px solid var(--border);
 }
 .page-tabs li {
   padding: 0;
@@ -31,13 +32,16 @@ ul.page-tabs {
   transition: all 0.3s ease;
   text-shadow: 1px 1px #ffffff;
 }
-ul.page-tabs li.active-page-tab a,
-ul.page-tabs li a:hover {
+ul.page-tabs li.active-page-tab a {
   background: var(--primary);
   color: #ffffff;
   text-shadow: none;
 }
-
+ul.page-tabs li a:hover {
+  background: var(--secondary);
+  color: #ffffff;
+  text-shadow: none;
+}
 /* common for all nodes */
 .node,
 .node-promoted,

@@ -89,9 +89,14 @@ h3.single-comment-title {
 #node-comment .indented {
   margin-left: 60px;
 }
+.single-comment-content ul.links.inline {
+  display: flex;
+  list-style: none;
+  gap: 8px;
+}
 .single-comment-content .links a {
   padding: 5px 10px;
-  border: 2px solid #ffffff;
+  border: 4px solid #ffffff;
   border-radius: 6px;
   transition: all 0.3s;
 }

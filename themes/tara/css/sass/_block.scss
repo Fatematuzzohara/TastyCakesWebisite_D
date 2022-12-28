@@ -23,9 +23,9 @@
   list-style: none;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 ol.breadcrumb-items li {
-  display: inline;
   padding: 0;
 }
 .breadcrumb-item-seperator {

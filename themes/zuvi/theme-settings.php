@@ -6,6 +6,8 @@
  */
 
 function zuvi_form_system_theme_settings_alter(&$form, &$form_state) {
+  $image_zuvipro = $GLOBALS['base_url'] . '/' . drupal_get_path('theme', 'zuvi') . '/images/zuvipro.png';
+  $zuvipro = '<img src="'.$image_zuvipro.'" alt="zuviPro" />';
   $form['zuvi'] = [
     '#type'       => 'vertical_tabs',
     '#title'      => '<h3>' . t('Zuvi Theme Settings') . '</h3>',
@@ -20,7 +22,7 @@ function zuvi_form_system_theme_settings_alter(&$form, &$form_state) {
   $form['general'] = [
     '#type'  => 'details',
     '#title' => t('General'),
-    '#description' => t('<h3>Thanks for using ZUVI Theme</h3>Zuvi is a free Drupal 8 theme designed and developed by <a href="https://drupar.com" target="_blank">Drupar.com</a>'),
+    '#description' => t('<h3>Thanks for using ZUVI Theme</h3>Zuvi is a free Drupal 8, 9 theme designed and developed by <a href="https://drupar.com" target="_blank">Drupar.com</a>'),
     '#group' => 'zuvi',
   ];
 
@@ -74,19 +76,16 @@ function zuvi_form_system_theme_settings_alter(&$form, &$form_state) {
     '#title' => t('Footer'),
     '#group' => 'zuvi',
   ];
-
-  // Main Tabs -> Custom Styling.
-  $form['css'] = [
+  // Insert codes
+  $form['insert_codes'] = [
     '#type'  => 'details',
-    '#title' => t('Custom Styling'),
+    '#title' => t('Insert Codes'),
     '#group' => 'zuvi',
   ];
-
   // Main Tabs -> Support.
   $form['support'] = [
     '#type'  => 'details',
     '#title' => t('Support'),
-    '#description' => t('For any support related to zuvi theme, please post on our <a href="https://www.drupar.com/forum" target="_blank">support forum</a>.'),
     '#group' => 'zuvi',
   ];
 
@@ -94,7 +93,7 @@ function zuvi_form_system_theme_settings_alter(&$form, &$form_state) {
   $form['upgrade'] = [
     '#type'  => 'details',
     '#title' => t('Upgrade To ZuviPro'),
-    '#description'  => t('<h3>Upgrade To ZuviPro For $19 only.</h3>'),
+    '#description'  => t("<h3>Upgrade To ZuviPro For $19 only.</h3>"),
     '#group' => 'zuvi',
   ];
 
@@ -116,8 +115,6 @@ function zuvi_form_system_theme_settings_alter(&$form, &$form_state) {
     '#type'        => 'fieldset',
     '#title'       => t('Theme Color'),
     '#description'   => t('This feature is available in the premium version of this theme. <a href="https://www.drupar.com/theme/zuvipro" target="_blank">Buy ZuviPro for $19 only.</a>'),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
   ];
 
   // Settings under social tab.
@@ -125,14 +122,10 @@ function zuvi_form_system_theme_settings_alter(&$form, &$form_state) {
   $form['social']['social_profile'] = [
     '#type'        => 'fieldset',
     '#title'       => t('Social Profile'),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
   ];
   $form['social']['social_profile']['all_icons'] = [
     '#type'        => 'fieldset',
     '#title'       => t('Show Social Icons'),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
   ];
 
   $form['social']['social_profile']['all_icons']['all_icons_show'] = [
@@ -146,8 +139,6 @@ function zuvi_form_system_theme_settings_alter(&$form, &$form_state) {
     $form['social']['social_profile']['facebook'] = [
     '#type'        => 'details',
     '#title'       => t("Facebook"),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
   ];
 
   $form['social']['social_profile']['facebook']['facebook_url'] = [
@@ -161,8 +152,6 @@ function zuvi_form_system_theme_settings_alter(&$form, &$form_state) {
   $form['social']['social_profile']['twitter'] = [
     '#type'        => 'details',
     '#title'       => t("Twitter"),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
   ];
 
   $form['social']['social_profile']['twitter']['twitter_url'] = [
@@ -176,8 +165,6 @@ function zuvi_form_system_theme_settings_alter(&$form, &$form_state) {
   $form['social']['social_profile']['instagram'] = [
     '#type'        => 'details',
     '#title'       => t("Instagram"),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
   ];
 
   $form['social']['social_profile']['instagram']['instagram_url'] = [
@@ -191,8 +178,6 @@ function zuvi_form_system_theme_settings_alter(&$form, &$form_state) {
   $form['social']['social_profile']['linkedin'] = [
     '#type'        => 'details',
     '#title'       => t("Linkedin"),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
   ];
 
   $form['social']['social_profile']['linkedin']['linkedin_url'] = [
@@ -206,8 +191,6 @@ function zuvi_form_system_theme_settings_alter(&$form, &$form_state) {
   $form['social']['social_profile']['youtube'] = [
     '#type'        => 'details',
     '#title'       => t("YouTube"),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
   ];
 
   $form['social']['social_profile']['youtube']['youtube_url'] = [
@@ -221,8 +204,6 @@ function zuvi_form_system_theme_settings_alter(&$form, &$form_state) {
   $form['social']['social_profile']['vimeo'] = [
     '#type'        => 'details',
     '#title'       => t("vimeo"),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
   ];
 
   $form['social']['social_profile']['vimeo']['vimeo_url'] = [
@@ -236,8 +217,6 @@ function zuvi_form_system_theme_settings_alter(&$form, &$form_state) {
     $form['social']['social_profile']['telegram'] = [
     '#type'        => 'details',
     '#title'       => t("Telegram"),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
   ];
 
   $form['social']['social_profile']['telegram']['telegram_url'] = [
@@ -251,8 +230,6 @@ function zuvi_form_system_theme_settings_alter(&$form, &$form_state) {
     $form['social']['social_profile']['whatsapp'] = [
     '#type'        => 'details',
     '#title'       => t("WhatsApp"),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
   ];
 
   $form['social']['social_profile']['whatsapp']['whatsapp_url'] = [
@@ -266,8 +243,6 @@ function zuvi_form_system_theme_settings_alter(&$form, &$form_state) {
     $form['social']['social_profile']['github'] = [
     '#type'        => 'details',
     '#title'       => t("GitHub"),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
   ];
 
   $form['social']['social_profile']['github']['github_url'] = [
@@ -281,8 +256,6 @@ function zuvi_form_system_theme_settings_alter(&$form, &$form_state) {
   $form['social']['social_profile']['vk'] = [
     '#type'        => 'details',
     '#title'       => t("vk.com"),
-    '#collapsible' => true,
-    '#collapsed'   => false,
   ];
   $form['social']['social_profile']['vk']['vk_url'] = [
       '#type'          => 'textfield',
@@ -296,8 +269,6 @@ function zuvi_form_system_theme_settings_alter(&$form, &$form_state) {
     '#type'        => 'fieldset',
     '#title'       => t('Add More Social Icons'),
     '#description'   => t('This feature is available in the premium version of this theme. <a href="https://www.drupar.com/theme/zuvipro" target="_blank">Buy ZuviPro for $19 only.</a>'),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
   ];
 
   // Settings under slider tab.
@@ -305,8 +276,6 @@ function zuvi_form_system_theme_settings_alter(&$form, &$form_state) {
   $form['slider']['slider_enable_option'] = [
     '#type'        => 'fieldset',
     '#title'       => t('Enable Slider'),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
   ];
 
   $form['slider']['slider_enable_option']['slider_show'] = [
@@ -321,16 +290,12 @@ function zuvi_form_system_theme_settings_alter(&$form, &$form_state) {
     '#type'        => 'fieldset',
     '#title'       => t('Slider Bottom Wave Shape'),
     '#description'   => t('<h4>Hide Slider Bottom Wave Shape</h4>This feature is available in the premium version of this theme. <a href="https://www.drupar.com/theme/zuvipro" target="_blank">Buy ZuviPro for $19 only.</a>'),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
   ];
 
   /* Slider Image upload */
   $form['slider']['slider_image_section'] = [
     '#type'        => 'fieldset',
     '#title'       => t('Slider Background Image<hr />'),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
   ];
   $form['slider']['slider_image_section']['slider_image'] = [
     '#type'          => 'managed_file',
@@ -352,15 +317,11 @@ function zuvi_form_system_theme_settings_alter(&$form, &$form_state) {
     '#type'        => 'fieldset',
     '#title'       => t('Sticky Header'),
     '#description'   => t('This feature is available in the premium version of this theme. <a href="https://www.drupar.com/theme/zuvipro" target="_blank">Buy ZuviPro for $19 only.</a>'),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
   ];
   $form['header']['circle_style'] = [
     '#type'        => 'fieldset',
     '#title'       => t('Solid or Border Animated Circles'),
     '#description'   => t('Select header animated circles type. You can set border circles or solid circles.'),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
   ];
   $form['header']['circle_style']['circle_type'] = [
     '#type'          => 'select',
@@ -375,23 +336,27 @@ function zuvi_form_system_theme_settings_alter(&$form, &$form_state) {
     '#type'        => 'fieldset',
     '#title'       => t('Color Of Animated Circles in Header'),
     '#description'   => t('Color option is available in the premium version of this theme. <a href="https://www.drupar.com/theme/zuvipro" target="_blank">Buy ZuviPro for $19 only.</a>'),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
   ];
   $form['header']['circle'] = [
     '#type'        => 'fieldset',
     '#title'       => t('Disable Animated Circles in Header'),
     '#description'   => t('This feature is available in the premium version of this theme. <a href="https://www.drupar.com/theme/zuvipro" target="_blank">Buy ZuviPro for $19 only.</a>'),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
   ];
   // Settings under sidebar.
+  $form['sidebar']['front_sidebars'] = [
+    '#type'          => 'fieldset',
+    '#title'         => t('Homepage Sidebar'),
+  ];
+  $form['sidebar']['front_sidebars']['front_sidebar'] = [
+    '#type'          => 'checkbox',
+    '#title'         => t('Show Sidebars On Homepage'),
+    '#default_value' => theme_get_setting('front_sidebar', 'zuvi'),
+    '#description'   => t('Check this option to enable left and right sidebar on homepage.'),
+  ];
   $form['sidebar']['animated_sidebar'] = [
     '#type'        => 'fieldset',
     '#title'       => t('Animated Sidebar'),
     '#description'   => t('This feature is available in the premium version of this theme. <a href="https://www.drupar.com/theme/ZuviPro" target="_blank">Buy ZuviPro for $19 only.</a>'),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
   ];
 
   // Settings under content tab.
@@ -400,24 +365,18 @@ function zuvi_form_system_theme_settings_alter(&$form, &$form_state) {
     '#type'        => 'fieldset',
     '#title'       => t('Pre Page Loader'),
     '#description'   => t('This feature is available in the premium version of this theme. <a href="https://www.drupar.com/theme/ZuviPro" target="_blank">Buy ZuviPro for $19 only.</a>'),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
   ];
 
   $form['content']['cursor'] = [
     '#type'        => 'fieldset',
     '#title'       => t('Fancy Cursor'),
     '#description'   => t('This feature is available in the premium version of this theme. <a href="https://www.drupar.com/theme/ZuviPro" target="_blank">Buy ZuviPro for $19 only.</a>'),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
   ];
   // Settings under content tab -> Animated Content.
   $form['content']['animated_content'] = [
     '#type'        => 'fieldset',
     '#title'       => t('Animated Page Content'),
     '#description'   => t('This feature is available in the premium version of this theme. <a href="https://www.drupar.com/theme/ZuviPro" target="_blank">Buy ZuviPro for $19 only.</a>'),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
   ];
 
   // Settings under content tab -> Font Icons.
@@ -425,16 +384,21 @@ function zuvi_form_system_theme_settings_alter(&$form, &$form_state) {
     '#type'        => 'fieldset',
     '#title'       => t('Font Icons'),
     '#description'   => t(''),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
   ];
 
   // Settings under content tab -> Font Icons -> FontAwesome
   $form['content']['font_icons']['font_icon_fontawesome'] = [
     '#type'          => 'checkbox',
-    '#title'         => t('Font Awesome'),
+    '#title'         => t('Font Awesome 4'),
     '#default_value' => theme_get_setting('font_icon_fontawesome', 'zuvi'),
     '#description'   => t('Check this option to enable FontAwesome font icons. Uncheck to disable.<br /><br />zuvi theme has included FontAwesome v4.7.0 font icons. You can use any FontAwesome font icon with zuvi theme.<br />Please visit this tutorial page for details. <a href="https://www.drupar.com/custom-shortcodes-set-two/fontawesome-font-icons" target="_blank">How To Use FontAwesome Font Icons</a>.<br /><br /><hr /><br />'),
+  ];
+  $form['content']['font_icons']['font_icon_fontawesome5'] = [
+    '#type'          => 'checkbox',
+    '#disabled'   => TRUE,
+    '#title'         => t('Font Awesome 5'),
+    '#default_value' => theme_get_setting('font_icon_fontawesome5', 'zuvi'),
+    '#description'   => t('<p>This feature is available in the premium version of this theme. <a href="https://www.drupar.com/theme/zuvipro" target="_blank">Buy ZuviPro for $19 only.</a></p><br /><br /><hr /><br />'),
   ];
   // Settings under content tab -> Font Icons -> Google Material Icons
   $form['content']['font_icons']['font_icon_material'] = [
@@ -449,8 +413,6 @@ function zuvi_form_system_theme_settings_alter(&$form, &$form_state) {
   $form['content']['comment'] = [
     '#type'        => 'fieldset',
     '#title'       => t('Comment'),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
   ];
 
   $form['content']['comment']['comment_user_pic'] = [
@@ -464,8 +426,6 @@ function zuvi_form_system_theme_settings_alter(&$form, &$form_state) {
   $form['content']['node'] = [
     '#type'        => 'fieldset',
     '#title'       => t('Node'),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
   ];
 
   $form['content']['node']['node_author_pic'] = [
@@ -479,8 +439,6 @@ function zuvi_form_system_theme_settings_alter(&$form, &$form_state) {
     '#type'        => 'fieldset',
     '#title'       => t('Share Page On Social networking websites'),
     '#description'   => t('This feature is available in the premium version of this theme. <a href="https://www.drupar.com/theme/ZuviPro" target="_blank">Buy ZuviPro for $19 only.</a>'),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
   ];
 
   // Show tags in node submitted.
@@ -497,15 +455,11 @@ function zuvi_form_system_theme_settings_alter(&$form, &$form_state) {
     '#type'        => 'fieldset',
     '#title'       => t('Footer Wave Shape'),
     '#description'   => t('This feature is available in the premium version of this theme. <a href="https://www.drupar.com/theme/zuvipro" target="_blank">Buy ZuviPro for $19 only.</a>'),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
   ];
   // Scroll to top.
   $form['footer']['scrolltotop'] = [
     '#type'        => 'fieldset',
     '#title'       => t('Scroll To Top'),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
   ];
 
   $form['footer']['scrolltotop']['scrolltotop_on'] = [
@@ -519,8 +473,6 @@ function zuvi_form_system_theme_settings_alter(&$form, &$form_state) {
   $form['footer']['copyright'] = [
     '#type'        => 'fieldset',
     '#title'       => t('Website Copyright Text'),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
   ];
 
   $form['footer']['copyright']['copyright_text'] = [
@@ -541,8 +493,6 @@ function zuvi_form_system_theme_settings_alter(&$form, &$form_state) {
   $form['footer']['cookie'] = [
     '#type'        => 'fieldset',
     '#title'       => t('Cookie Consent message'),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
     '#description'   => t('This feature is available in the premium version of this theme. <a href="https://www.drupar.com/theme/ZuviPro" target="_blank">Buy ZuviPro for $19 only.</a>'),
   ];
 
@@ -550,28 +500,63 @@ function zuvi_form_system_theme_settings_alter(&$form, &$form_state) {
     '#type'        => 'fieldset',
     '#title'       => t('Show Cookie Consent Message'),
     '#description'   => t('Make your website EU Cookie Law Compliant. According to EU cookies law, websites need to get consent from visitors to store or retrieve cookies.'),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
   ];
-
   /**
-   * Settings under Custom Styling tab.
+   * Insert Codes
    */
-  $form['css']['custom'] = [
+  $form['insert_codes']['insert_codes_tab'] = [
+    '#type'  => 'vertical_tabs',
+  ];
+  // Insert Codes -> Head
+  $form['insert_codes']['head'] = [
+    '#type'        => 'details',
+    '#title'       => t('Head'),
+    '#description' => t('<h3>Insert Codes Before &lt;/HEAD&gt;</h3><hr />'),
+    '#group' => 'insert_codes_tab',
+  ];
+  // Insert Codes -> Body
+  $form['insert_codes']['body'] = [
+    '#type'        => 'details',
+    '#title'       => t('Body'),
+    '#group' => 'insert_codes_tab',
+  ];
+  // Insert Codes -> CSS
+  $form['insert_codes']['css'] = [
+    '#type'        => 'details',
+    '#title'       => t('CSS Codes'),
+    '#group'       => 'insert_codes_tab',
+  ];
+  // Insert Codes -> Head -> Head codes
+  $form['insert_codes']['head']['insert_head'] = [
+    '#type'          => 'fieldset',
+    '#description'   => t('This feature is available in the premium version of this theme. <a href="https://www.drupar.com/theme/zuvipro" target="_blank">Buy ZuviPro for $19 only.</a>'),
+  ];
+  // Insert Codes -> Body -> Body start codes
+  $form['insert_codes']['body']['insert_body_start_section'] = [
+    '#type'        => 'fieldset',
+    '#title'       => t('Insert code after &lt;BODY&gt; tag'),
+    '#description'   => t('This feature is available in the premium version of this theme. <a href="https://www.drupar.com/theme/zuvipro" target="_blank">Buy ZuviPro for $19 only.</a>'),
+  ];
+  // Insert Codes -> Body -> Body ENd codes
+  $form['insert_codes']['body']['insert_body_end_section'] = [
+    '#type'        => 'fieldset',
+    '#title'       => t('Insert code before &lt;/BODY&gt; tag'),
+    '#description'   => t('This feature is available in the premium version of this theme. <a href="https://www.drupar.com/theme/zuvipro" target="_blank">Buy ZuviPro for $19 only.</a>'),
+  ];
+  // Insert Codes -> css
+  $form['insert_codes']['css']['custom'] = [
     '#type'        => 'fieldset',
     '#title'       => t('Custom Styling'),
-    '#collapsible' => TRUE,
-    '#collapsed'   => FALSE,
   ];
 
-  $form['css']['custom']['styling'] = [
+  $form['insert_codes']['css']['custom']['styling'] = [
     '#type'          => 'checkbox',
     '#title'         => t('Enable custom css'),
     '#default_value' => theme_get_setting('styling', 'zuvi'),
     '#description'   => t("Check this option to enable custom styling. Uncheck to disable this fearure.<br />Please refer to this tutorial page. <a href='https://www.drupar.com/zuvi-documentation/custom-css' target='_blank'>How To Use Custom Styling</a>"),
   ];
 
-  $form['css']['custom']['styling_code'] = [
+  $form['insert_codes']['css']['custom']['styling_code'] = [
     '#type'          => 'textarea',
     '#title'         => t('Custom CSS Codes'),
     '#default_value' => theme_get_setting('styling_code', 'zuvi'),
@@ -581,11 +566,12 @@ function zuvi_form_system_theme_settings_alter(&$form, &$form_state) {
   // Settings under support tab.
   $form['support']['info'] = [
     '#type'        => 'fieldset',
+    '#title'         => t('Support'),
     '#description' => t('<h4>Documentation</h4>
     <p>We have a detailed documentation about how to use theme. Please read the <a href="https://www.drupar.com/zuvi-documentation" target="_blank">Zuvi Theme Documentation</a>.</p>
     <hr />
-    <h4>Ask in our forum</h4>
-    <p>If you need support that is beyond our theme documentation, please ask in our support forum.<br /><a href="https://www.drupar.com/forum" target="_blank">drupar.com/forum</a></p>
+    <h4>Open An Issue</h4>
+    <p>If you need support that is beyond our theme documentation, please <a href="https://www.drupal.org/project/issues/zuvi" target="_blank">create an issue</a> at Drupal.org project page.</p>
     <hr />
     <h4>Contact Us</h4>
     <p>If you need some specific customization in theme, please contact us<br><a href="https://www.drupar.com/contact" target="_blank">drupar.com/contact</a></p>'),
@@ -595,6 +581,7 @@ function zuvi_form_system_theme_settings_alter(&$form, &$form_state) {
   $form['upgrade']['info'] = [
     '#type'        => 'fieldset',
     '#title'       => t('<a href="https://demo2.drupar.com/zuvipro/" target="_blank">ZuviPro Demo</a> | <a href="https://www.drupar.com/theme/zuvipro" target="_blank">Purchase ZuviPro for $19 only</a>'),
+    '#description' => $zuvipro,
   ];
 // End form.
 }

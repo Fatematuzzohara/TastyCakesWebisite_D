@@ -1,16 +1,17 @@
 <!-- Start: Footer -->
-<footer class="footer block-section clear">
+<footer class="footer">
   {% if page.footer_top %}
     <section id="footer-top">
-      <div class="footer-top container clear">
-        {{ page.footer_top }}
+      <div class="container">
+        <div class="footer-top">{{ page.footer_top }}</div>
       </div>
     </section>
   {% endif %}<!-- /footer-top -->
 
   {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
     <section id="footer-blocks">
-      <div class="container footer-container clear">   
+      <div class="container">
+      <div class="footer-container">
         <div class="footer-block">
           {% if page.footer_first %}
             {{ page.footer_first }}
@@ -34,21 +35,23 @@
             {{ page.footer_fourth }}
           {% endif %}
         </div> <!--/footer-fourth -->
+      </div> <!--/footer-container -->
       </div> <!--/container -->
     </section> <!--/footer-blocks -->
   {% endif %} {# end if for footer one, two, three, four blocks #}
 
   {% if page.footer_bottom %}
     <section id="footer-bottom">
-      <div class="footer-bottom container clear">
-        {{ page.footer_bottom }}
+      <div class="container">
+        <div class="footer-bottom">{{ page.footer_bottom }}</div>
       </div> <!-- /.container -->
     </section>
   {% endif %}<!-- /footer-bottom -->
 
  {% if copyright_text or all_icons_show %}
   <section id="footer-bottom-last">
-    <div class="footer-bottom-last container clear">
+    <div class="container">
+    <div class="footer-bottom-last">
       {% if copyright_text %}
           <div class="copyright">
             &copy; {{ "now"|date("Y") }} {{ site_name }}, All rights reserved.
@@ -60,6 +63,7 @@
         </div>
       {% endif %}
       </div> <!--/.text_right -->
+    </div> <!-- /.footer-bottom-last -->
     </div> <!-- /.container -->
   </section> <!-- /footer-bottom-last -->
   {% endif %} <!-- end condition if copyright or social icons -->
@@ -74,10 +78,10 @@
 {% if font_icon_material %}
 {{ attach_library('zuvi/material') }}
 {% endif %}
-<style>
 {% if circle_type == 'circle_solid' %}
+<style>
 .header-circle {
   background: var(--circle-color);
 }
-{% endif %}
 </style>
+{% endif %}

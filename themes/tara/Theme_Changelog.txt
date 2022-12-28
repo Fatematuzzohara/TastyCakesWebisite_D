@@ -11,3 +11,10 @@ Version 10.0.1
 +===============================+
 - Fixed left sidebar layout issue on frontpage.
 - Better README.md file content.
+
+
++===============================+
+Version 10.0.2
+21 Dec, 2022
++===============================+
+- Minor improvements.

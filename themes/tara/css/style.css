@@ -6,6 +6,7 @@
   --bold-color: #222222;
   --header-top-bg: #e4e4dd;
   --primary: #e3831c;
+  --secondary: #A7BD43;
   --light: #f7f7f2;
   --border: #dbdbd3;
   --shadow: 0 0 6px 1px #cccccc;
@@ -821,6 +822,21 @@ summary {
           order: 3;
 }
 
+.local-action {
+  list-style: none;
+}
+
+.button-action {
+  background-color: var(--secondary);
+  color: #ffffff;
+  padding: 6px 12px;
+}
+
+.button-action:hover {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
 /* Header
 --------------------------------------*/
 /* Header container */
@@ -1054,15 +1070,22 @@ ul.social-icons li a:hover {
 ul.main-menu,
 .region-primary-menu .menu {
   position: relative;
+  font-family: "Roboto", sans-serif;
+  color: var(--bold-color);
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   z-index: 10;
   list-style: none;
   list-style-type: none;
   text-transform: none;
+}
+
+ul.main-menu > li > span,
+.region-primary-menu .menu > li > span {
+  display: block;
+  padding: 16px 14px;
 }
 
 ul.main-menu > li a,
@@ -1112,7 +1135,6 @@ ul.main-menu ul.submenu li,
 .region-primary-menu .menu .submenu li {
   display: block;
   width: 160px;
-  padding: 12px 10px;
   font-size: 0.9rem;
   background: var(--bold-color);
   border-top: 1px solid #494949;
@@ -1121,7 +1143,8 @@ ul.main-menu ul.submenu li,
 
 ul.main-menu ul.submenu li a,
 .region-primary-menu .menu .submenu li a {
-  padding: 10px 10px;
+  display: block;
+  padding: 12px 4px 12px 14px;
   color: #ffffff;
 }
 
@@ -1443,13 +1466,15 @@ ul.main-menu li:hover > a,
 
 /* Admin Tabs */
 ul.page-tabs {
+  list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin: 0 0 10px 0;
   padding: 0;
-  border-bottom: 1px solid var(--border);
-  list-style: none;
+  border-bottom: 2px solid var(--border);
 }
 
 .page-tabs li {
@@ -1466,9 +1491,14 @@ ul.page-tabs {
   text-shadow: 1px 1px #ffffff;
 }
 
-ul.page-tabs li.active-page-tab a,
-ul.page-tabs li a:hover {
+ul.page-tabs li.active-page-tab a {
   background: var(--primary);
+  color: #ffffff;
+  text-shadow: none;
+}
+
+ul.page-tabs li a:hover {
+  background: var(--secondary);
   color: #ffffff;
   text-shadow: none;
 }
@@ -1720,10 +1750,11 @@ nav.pager {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 ol.breadcrumb-items li {
-  display: inline;
   padding: 0;
 }
 
@@ -1882,9 +1913,17 @@ h3.single-comment-title {
   margin-left: 60px;
 }
 
+.single-comment-content ul.links.inline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  gap: 8px;
+}
+
 .single-comment-content .links a {
   padding: 5px 10px;
-  border: 2px solid #ffffff;
+  border: 4px solid #ffffff;
   border-radius: 6px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -2498,11 +2537,11 @@ ol.search-results li {
           align-items: center;
   right: 10px;
   bottom: 10px;
-  width: 44px;
-  height: 44px;
-  background: #222;
-  color: #fff;
-  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  background: var(--bold-color);
+  color: #ffffff;
+  border-radius: 6px;
   z-index: 20;
   cursor: pointer;
   -webkit-transition: background 0.3s ease;
@@ -2512,6 +2551,7 @@ ol.search-results li {
 
 .scrolltop i {
   font-size: 1.6rem;
+  line-height: 1;
 }
 
 .scrolltop:hover {
@@ -3096,6 +3136,10 @@ nav.pager::after {
   .active-menu ul.main-menu li a,
   .active-menu ul.menu li a {
     border-bottom: 1px solid #434343;
+  }
+  ul.main-menu > li > span,
+  .region-primary-menu .menu > li > span {
+    color: #ffffff;
   }
   .active-menu .close-mobile-menu {
     position: absolute;

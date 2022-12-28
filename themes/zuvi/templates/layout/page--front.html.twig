@@ -12,13 +12,21 @@
 {% include '@zuvi/template-parts/highlighted.html.twig' %}
 <div id="main-wrapper" class="main-wrapper">
   <div class="container clear">
-    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+    {% if front_sidebar %}
+      <div class="main-container">
+    {% endif %}
     <main id="home-main" class="page-content home-content clear">
+      <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
       {% include '@zuvi/template-parts/content_top.html.twig' %}
       {{ page.content }}
       {% include '@zuvi/template-parts/content_home.html.twig' %}
       {% include '@zuvi/template-parts/content_bottom.html.twig' %}
     </main>
+    {% if front_sidebar %}
+      {% include '@zuvi/template-parts/sidebar_left.html.twig' %}
+      {% include '@zuvi/template-parts/sidebar_right.html.twig' %}
+      </div>
+    {% endif %}
   </div> {# /.container #}
 </div>{# /main-wrapper #}
 {% include '@zuvi/template-parts/footer.html.twig' %}
